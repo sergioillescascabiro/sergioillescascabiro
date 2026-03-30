@@ -108,6 +108,23 @@ Blind recruitment platform for university job fairs. Built V1 as a fast MVP, the
 
 ---
 
+### UPM-USA Career Fair Agent
+
+RAG-powered conversational agent for the 7th UPM-USA Career Fair (15+ participating tech firms, 300+ professionals). Built a LangGraph StateGraph that routes queries through three tools: two ChromaDB collections (company profiles/job descriptions and event logistics) and Tavily for live web search. Dual-LLM setup with automatic fallback (Groq Llama 3 primary, OpenRouter Llama 3.3 70B fallback). Custom ingestion pipeline that chunks company profiles, job requirements, booth assignments, schedules, and FAQ into separate ChromaDB collections with ONNX embeddings.
+
+**Key challenges:** Designing a tool-routing agent that searches local vector DB before hitting the web | Structuring ChromaDB collections for heterogeneous data (job descriptions vs event logistics) | LLM fallback chain for rate limit resilience | Bilingual system prompt (Spanish/English) | Next step: integrating Notion via MCP for live content sync and knowledge base management
+
+<p>
+  <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangGraph"/>
+  <img src="https://img.shields.io/badge/ChromaDB-FF6F61?style=flat-square" alt="ChromaDB"/>
+  <img src="https://img.shields.io/badge/Tavily-1C3C3C?style=flat-square" alt="Tavily"/>
+  <img src="https://img.shields.io/badge/Groq-F55036?style=flat-square" alt="Groq"/>
+  <img src="https://img.shields.io/badge/OpenRouter-6366F1?style=flat-square" alt="OpenRouter"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+</p>
+
+---
+
 ### QuercusHealth
 
 > [Public repo](https://github.com/sergioillescascabiro/QuercusHealth-Public)
@@ -158,6 +175,8 @@ Deep learning platform to detect *La Seca* disease across Spain's 5M-hectare Deh
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch"/>
   <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangGraph"/>
   <img src="https://img.shields.io/badge/LiveKit-000000?style=flat-square&logo=webrtc&logoColor=white" alt="LiveKit"/>
+  <img src="https://img.shields.io/badge/ChromaDB-FF6F61?style=flat-square" alt="ChromaDB"/>
+  <img src="https://img.shields.io/badge/Tavily-1C3C3C?style=flat-square" alt="Tavily"/>
   <img src="https://img.shields.io/badge/ElevenLabs-000000?style=flat-square" alt="ElevenLabs"/>
   <img src="https://img.shields.io/badge/Vapi.ai-5046E5?style=flat-square" alt="Vapi"/>
 </p>
