@@ -17,9 +17,11 @@
 
 ## About
 
-Computer & AI Engineer with a dual Master's (UPM Madrid + IIT Chicago). I started in telecom engineering and enterprise systems (Java/Spring Boot, OpenShift, Kubernetes at Minsait/Indra), where I learned what production-grade means under real SLAs.
+Computer & AI Engineer with a dual Master's (UPM Madrid + IIT Chicago). I spent years in telecom engineering and enterprise systems (Java/Spring Boot, OpenShift, Kubernetes at Minsait/Indra) trained to measure twice, plan three times, and move only when everything was certain. That mindset taught me rigor - but it also held me back from building.
 
-That foundation pushed me toward AI-native products. Today I design multi-agent voice systems, build RAG pipelines from multiple sources, and ship platforms where architecture follows user needs. I build fast, break things deliberately, document what went wrong, and rebuild better.
+Moving to the US changed that. The people I met here, the culture of just shipping things, the bias toward action over perfection - it rewired how I think about engineering. I stopped waiting for the perfect architecture and started building, breaking, learning, and rebuilding. In a world that moves this fast, the engineers who win are the ones who invest in learning something new every single day and treat every failure as a lesson, not a stop sign.
+
+Today I design multi-agent voice systems, build RAG pipelines, and ship full-stack platforms end-to-end. My public repos include post-mortems alongside the code because honest failure analysis is the fastest path to better architecture.
 
 ---
 
