@@ -77,11 +77,13 @@ Voice-first AI booking assistant for a barbershop powered by Vertex AI (Gemini 2
 
 ---
 
-### SIC-VeriATS: V1 > V2
+### UPM USA: Matching Platform (SIC-VeriATS V1 > V2)
 
-> [V1 is public with full post-mortem](https://github.com/sergioillescascabiro/SIC-VeriATS)
+> [V1 is public with full post-mortem](https://github.com/sergioillescascabiro/SIC-VeriATS) | V2 is currently in use internally by UPM USA
 
-Blind recruitment platform for university job fairs. Built V1 as a fast MVP, then wrote an honest post-mortem documenting three architectural failures (dual auth system, schema governance collapse, zero automated tests). Threw away the codebase and rebuilt V2 with every lesson applied: unified JWT auth, 5-service Docker Compose architecture, screener role, interview scheduling, matching engine, and MinIO for document storage.
+**The Context:** As part of my engineering work for UPM USA, I built the internal Applicant Tracking System for our annual Career Fair. The fair operates strictly on pre-scheduled interviews, requiring a robust matching process between 15 hiring companies (a record number) and 100 engineering students who are currently completing their Dual Degree programs in the US.
+
+Built V1 as a fast MVP, then wrote an honest post-mortem documenting three architectural failures (dual auth system, schema governance collapse, zero automated tests). Threw away the codebase and rebuilt V2 with every lesson applied: unified JWT auth, 5-service Docker Compose architecture, screener role, interview scheduling, matching engine, and MinIO for document storage.
 
 <table>
 <tr>
@@ -118,20 +120,23 @@ Blind recruitment platform for university job fairs. Built V1 as a fast MVP, the
 
 ---
 
-### UPM-USA Career Fair Agent
+### UPM USA: AI Candidate Support Agent
 
-RAG-powered conversational agent for the 7th UPM-USA Career Fair (15+ participating tech firms, 300+ professionals). Built a LangGraph StateGraph that routes queries through three tools: two ChromaDB collections (company profiles/job descriptions and event logistics) and Tavily for live web search. Dual-LLM setup with automatic fallback (Groq Llama 3 primary, OpenRouter Llama 3.3 70B fallback). Custom ingestion pipeline that chunks company profiles, job requirements, booth assignments, schedules, and FAQ into separate ChromaDB collections with ONNX embeddings.
+**The Problem Solved:** Managing a cohort of 100 students completing their Dual Degree programs in the US generates an overwhelming volume of repetitive questions regarding visa status, event logistics, and administrative procedures. Instead of answering them manually, I built an interactive conversational AI that guides students 24/7 using our internal knowledge base (Notion docs, FAQs, and historical data).
 
-**Key challenges:** Designing a tool-routing agent that searches local vector DB before hitting the web | Structuring ChromaDB collections for heterogeneous data (job descriptions vs event logistics) | LLM fallback chain for rate limit resilience | Bilingual system prompt (Spanish/English) | Next step: integrating Notion via MCP for live content sync and knowledge base management
+RAG-powered conversational agent built on a LangGraph StateGraph that routes queries through three tools: two ChromaDB collections (visas/logistics and company profiles) and Tavily for live web search. Dual-LLM setup with automatic fallback (Groq Llama 3 primary, Vertex AI fallback). Custom ingestion pipeline to chunk and embed Notion documents, schedules, and FAQ into ChromaDB with ONNX embeddings.
+
+**Key challenges:** Designing a tool-routing agent that searches local vector databases before hitting the web | Ingesting heterogeneous historical data from Notion and past manuals | Vertex AI fallback chain for rate limit resilience | Bilingual system prompt (Spanish/English)
 
 <p>
   <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangGraph"/>
   <img src="https://img.shields.io/badge/ChromaDB-FF6F61?style=flat-square" alt="ChromaDB"/>
   <img src="https://img.shields.io/badge/Tavily-1C3C3C?style=flat-square" alt="Tavily"/>
   <img src="https://img.shields.io/badge/Groq-F55036?style=flat-square" alt="Groq"/>
-  <img src="https://img.shields.io/badge/OpenRouter-6366F1?style=flat-square" alt="OpenRouter"/>
+  <img src="https://img.shields.io/badge/Vertex_AI-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Vertex AI"/>
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
 </p>
+
 
 ---
 
