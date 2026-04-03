@@ -25,11 +25,13 @@ Today I design multi-agent voice systems, build RAG pipelines, and ship full-sta
 
 ---
 
-## Missions
+## Projects
 
 ### Ace Interviewer / InterviewOS
 
 > **Overall Winner + Best Use of Gemini API** - Hack-a-Job Hackathon
+
+**The Problem Solved:** We eliminated the anxiety and false confidence of generic interview prep by building a system that perfectly simulates the exact interview you are about to walk into.
 
 AI mock interview platform that scrapes the actual job posting + company culture via Tavily (RAG), cross-references it against the candidate's resume, and generates hyper-personalized questions via Gemini 2.5 Pro. Interviews happen in real-time voice via LiveKit/Whisper, with per-answer scoring on specificity, structure, and persona fit.
 
@@ -46,26 +48,32 @@ AI mock interview platform that scrapes the actual job posting + company culture
   <img src="https://img.shields.io/badge/Recharts-FF6384?style=flat-square" alt="Recharts"/>
 </p>
 
+
 ---
 
 ### Sic Barber Vortex
 
-Voice-first AI booking assistant for a barbershop. Vertex AI (Gemini 1.5 Flash) with Function Calling queries Google Calendar in real-time to verify availability before confirming any slot. Remembers recurring clients via SQLite for contextual upselling. Handles Spanish, English, and French with culturally adapted tone. Full automation pipeline: voice call > AI conversation > calendar check > booking > Make.com webhook > notification.
+**The Problem Solved:** Everyone has experienced terrible, slow, and frustrating AI phone agents. We solved this poor experience by utilizing WebRTC through LiveKit Cloud and ElevenLabs to deliver an ultra-low latency, natural voice assistant that actually feels human.
 
-**Key challenges:** Function Calling for live calendar availability | Client memory + intelligent upselling based on visit history | Multilingual prompt engineering with Deepgram Nova-2 auto-detection | End-to-end automation from voice to notification
+Voice-first AI booking assistant for a barbershop powered by Vertex AI (Gemini 2.5). Uses Function Calling to query Google Calendar in real-time to verify availability before confirming any slot. Remembers recurring clients via SQLite for contextual upselling and handles Spanish, English, and French effectively. The system is designed to be connected to a real phone number to handle both inbound and outbound calls natively.
+
+**Key challenges:** Ultra-low latency voice orchestration (LiveKit Cloud & ElevenLabs) | Live calendar availability via Function Calling | Client memory + intelligent upselling | End-to-end automation from voice interaction to native Slack notification webhooks
 
 <p>
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js"/>
   <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white" alt="Express"/>
+  <img src="https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="GCP"/>
   <img src="https://img.shields.io/badge/Vertex_AI-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Vertex AI"/>
-  <img src="https://img.shields.io/badge/Gemini_1.5_Flash-8E75B2?style=flat-square&logo=googlegemini&logoColor=white" alt="Gemini"/>
-  <img src="https://img.shields.io/badge/Vapi.ai-5046E5?style=flat-square" alt="Vapi"/>
+  <img src="https://img.shields.io/badge/Gemini_2.5-8E75B2?style=flat-square&logo=googlegemini&logoColor=white" alt="Gemini"/>
+  <img src="https://img.shields.io/badge/LiveKit_Cloud-000000?style=flat-square&logo=webrtc&logoColor=white" alt="LiveKit"/>
   <img src="https://img.shields.io/badge/ElevenLabs-000000?style=flat-square" alt="ElevenLabs"/>
   <img src="https://img.shields.io/badge/Google_Calendar-4285F4?style=flat-square&logo=googlecalendar&logoColor=white" alt="Google Calendar"/>
   <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite"/>
-  <img src="https://img.shields.io/badge/Make.com-6D00CC?style=flat-square" alt="Make"/>
+  <img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=slack&logoColor=white" alt="Slack"/>
   <img src="https://img.shields.io/badge/Zod-3E67B1?style=flat-square&logo=zod&logoColor=white" alt="Zod"/>
 </p>
+
+
 
 ---
 
