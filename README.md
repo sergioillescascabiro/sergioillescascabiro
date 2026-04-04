@@ -53,26 +53,28 @@ AI mock interview platform that scrapes the actual job posting + company culture
 
 ### Sic Barber Vortex
 
-**The Problem Solved:** Everyone has experienced terrible, slow, and frustrating AI phone agents. We solved this poor experience by utilizing WebRTC through LiveKit Cloud and ElevenLabs to deliver an ultra-low latency, natural voice assistant that actually feels human.
+> [Try a Live Voice Demo Here](https://sic-barber-frontend-28328527147.us-central1.run.app/)
 
-Voice-first AI booking assistant for a barbershop powered by Vertex AI (Gemini 2.5). Uses Function Calling to query Google Calendar in real-time to verify availability before confirming any slot. Remembers recurring clients via SQLite for contextual upselling and handles Spanish, English, and French effectively. The system is designed to be connected to a real phone number to handle both inbound and outbound calls natively.
+**The Problem Solved:** Everyone has experienced terrible, slow, and frustrating AI phone agents. We solved this poor experience by utilizing WebRTC through LiveKit Cloud, Deepgram STT (Speech-to-Text), and ElevenLabs TTS (Text-to-Speech) to deliver an ultra-low latency, natural voice assistant that actually feels human.
 
-**Key challenges:** Ultra-low latency voice orchestration (LiveKit Cloud & ElevenLabs) | Live calendar availability via Function Calling | Client memory + intelligent upselling | End-to-end automation from voice interaction to native Slack notification webhooks
+Voice-first AI booking assistant for a barbershop powered by Vertex AI (Gemini 2.5) and deployed serverless on GCP Cloud Run. Uses Function Calling to query Google Calendar in real-time to verify availability before confirming any slot. Remembers recurring clients via SQLite for contextual upselling and handles Spanish, English, and French effectively. The system is designed to be connected to a real phone number to handle both inbound and outbound calls natively.
+
+**Key challenges:** Ultra-low latency voice orchestration pipeline (LiveKit, Deepgram & ElevenLabs) | Serverless Docker deployment to GCP Cloud Run | Live calendar availability via Function Calling | Client memory + intelligent upselling | End-to-end automation from voice interaction to native Slack notification webhooks
 
 <p>
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js"/>
   <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white" alt="Express"/>
-  <img src="https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="GCP"/>
+  <img src="https://img.shields.io/badge/GCP_Cloud_Run-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Cloud Run"/>
   <img src="https://img.shields.io/badge/Vertex_AI-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Vertex AI"/>
   <img src="https://img.shields.io/badge/Gemini_2.5-8E75B2?style=flat-square&logo=googlegemini&logoColor=white" alt="Gemini"/>
   <img src="https://img.shields.io/badge/LiveKit_Cloud-000000?style=flat-square&logo=webrtc&logoColor=white" alt="LiveKit"/>
+  <img src="https://img.shields.io/badge/Deepgram-111111?style=flat-square" alt="Deepgram"/>
   <img src="https://img.shields.io/badge/ElevenLabs-000000?style=flat-square" alt="ElevenLabs"/>
   <img src="https://img.shields.io/badge/Google_Calendar-4285F4?style=flat-square&logo=googlecalendar&logoColor=white" alt="Google Calendar"/>
   <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite"/>
   <img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=slack&logoColor=white" alt="Slack"/>
   <img src="https://img.shields.io/badge/Zod-3E67B1?style=flat-square&logo=zod&logoColor=white" alt="Zod"/>
 </p>
-
 
 
 ---
@@ -83,7 +85,8 @@ Voice-first AI booking assistant for a barbershop powered by Vertex AI (Gemini 2
 
 **The Context:** As part of my engineering work for UPM USA, I built the internal Applicant Tracking System for our annual Career Fair. The fair operates strictly on pre-scheduled interviews, requiring a robust matching process between 15 hiring companies (a record number) and 100 engineering students who are currently completing their Dual Degree programs in the US.
 
-Built V1 as a fast MVP, then wrote an honest post-mortem documenting three architectural failures (dual auth system, schema governance collapse, zero automated tests). Threw away the codebase and rebuilt V2 with every lesson applied: unified JWT auth, 5-service Docker Compose architecture, screener role, interview scheduling, matching engine, and MinIO for document storage.
+Built V1 as a fast MVP, then wrote an honest post-mortem documenting three architectural failures (dual auth system, schema governance collapse, zero automated tests). Threw away the codebase and rebuilt V2 with every lesson applied: unified JWT auth, 5-service Docker Compose architecture, screener role, interview scheduling, matching engine, MinIO for document storage, and Docling for high-fidelity PDF resume parsing into Markdown.
+
 
 <table>
 <tr>
@@ -110,6 +113,7 @@ Built V1 as a fast MVP, then wrote an honest post-mortem documenting three archi
 
 <p>
   <img src="https://img.shields.io/badge/Next.js_14-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js"/>
+  <img src="https://img.shields.io/badge/Docling-0F62FE?style=flat-square&logo=ibm&logoColor=white" alt="Docling"/>
   <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"/>
   <img src="https://img.shields.io/badge/PostgreSQL_16-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
   <img src="https://img.shields.io/badge/SQLAlchemy_2.0-D71F00?style=flat-square" alt="SQLAlchemy"/>
@@ -176,6 +180,7 @@ Deep learning platform to detect *La Seca* disease across Spain's 5M-hectare Deh
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js"/>
   <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot"/>
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite"/>
 </p>
 
 </td>
@@ -189,11 +194,12 @@ Deep learning platform to detect *La Seca* disease across Spain's 5M-hectare Deh
   <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI"/>
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch"/>
   <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangGraph"/>
-  <img src="https://img.shields.io/badge/LiveKit-000000?style=flat-square&logo=webrtc&logoColor=white" alt="LiveKit"/>
+  <img src="https://img.shields.io/badge/LiveKit_Cloud-000000?style=flat-square&logo=webrtc&logoColor=white" alt="LiveKit"/>
   <img src="https://img.shields.io/badge/ChromaDB-FF6F61?style=flat-square" alt="ChromaDB"/>
   <img src="https://img.shields.io/badge/Tavily-1C3C3C?style=flat-square" alt="Tavily"/>
   <img src="https://img.shields.io/badge/ElevenLabs-000000?style=flat-square" alt="ElevenLabs"/>
-  <img src="https://img.shields.io/badge/Vapi.ai-5046E5?style=flat-square" alt="Vapi"/>
+  <img src="https://img.shields.io/badge/Docling-0F62FE?style=flat-square&logo=ibm&logoColor=white" alt="Docling"/>
+
 </p>
 
 </td>
@@ -207,7 +213,7 @@ Deep learning platform to detect *La Seca* disease across Spain's 5M-hectare Deh
   <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
   <img src="https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white" alt="Nginx"/>
   <img src="https://img.shields.io/badge/MinIO-C72E49?style=flat-square&logo=minio&logoColor=white" alt="MinIO"/>
-  <img src="https://img.shields.io/badge/Make.com-6D00CC?style=flat-square" alt="Make"/>
+  <img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=slack&logoColor=white" alt="Slack"/>
 </p>
 
 </td>
